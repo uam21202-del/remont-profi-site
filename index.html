@@ -71,9 +71,12 @@ img{max-width:100%;display:block}
 .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .portfolio-card{background:#fff;border:1px solid rgba(20,40,120,.06);border-radius:16px;overflow:hidden;transition:.3s;box-shadow:0 4px 20px rgba(20,40,120,.04)}
 .portfolio-card:hover{box-shadow:0 12px 40px rgba(20,40,120,.08);border-color:rgba(200,168,124,.2);transform:translateY(-4px)}
-.portfolio-card .img-wrap{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden}
+.portfolio-card .img-wrap{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;background:#e8e4dc}
 .portfolio-card .img-wrap .row{display:flex;height:100%}
 .portfolio-card .img-wrap .row .col{flex:1;position:relative;overflow:hidden}
+.portfolio-card .img-wrap .row .col img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.portfolio-card .img-wrap .p-col{flex:1;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.portfolio-card .img-wrap .p-col .p-badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;z-index:3;position:relative}
 .portfolio-card .img-wrap .label{position:absolute;top:12px;border-radius:6px;font-size:11px;font-weight:700;padding:4px 12px;text-transform:uppercase;letter-spacing:.5px;z-index:3}
 .portfolio-card .img-wrap .label.before{left:12px;background:rgba(20,40,120,.08);color:rgba(20,40,120,.5)}
 .portfolio-card .img-wrap .label.after{right:12px;background:#142878;color:#fff}
@@ -357,13 +360,13 @@ img{max-width:100%;display:block}
       <div class="portfolio-card fade-in">
         <div class="img-wrap">
           <div class="row">
-            <div class="col" style="background:#e8e4dc;display:flex;align-items:center;justify-content:center;flex-direction:column">
-              <span style="font-size:48px;opacity:.3">🏚️</span>
-              <span style="font-size:12px;color:rgba(20,40,120,.2);margin-top:8px">ДО</span>
+            <div class="p-col" style="background:#2a2a3a">
+              <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=300&fit=crop&q=80" alt="До ремонта" loading="lazy">
+              <span class="p-badge" style="color:rgba(255,255,255,.4)">ДО</span>
             </div>
-            <div class="col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03));display:flex;align-items:center;justify-content:center;flex-direction:column">
-              <span style="font-size:48px;opacity:.3">🏡</span>
-              <span style="font-size:12px;color:#c8a87c;margin-top:8px">ПОСЛЕ</span>
+            <div class="p-col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03))">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop&q=80" alt="После ремонта" loading="lazy">
+              <span class="p-badge" style="color:#c8a87c">ПОСЛЕ</span>
             </div>
           </div>
           <span class="label before">до</span>
@@ -383,13 +386,13 @@ img{max-width:100%;display:block}
       <div class="portfolio-card fade-in">
         <div class="img-wrap">
           <div class="row">
-            <div class="col" style="background:#e8e4dc;display:flex;align-items:center;justify-content:center;flex-direction:column">
-              <span style="font-size:48px;opacity:.3">🏚️</span>
-              <span style="font-size:12px;color:rgba(20,40,120,.2);margin-top:8px">ДО</span>
+            <div class="p-col" style="background:#2a2a3a">
+              <img src="https://images.unsplash.com/photo-1590642916589-592bcaa22f7c?w=400&h=300&fit=crop&q=80" alt="До ремонта" loading="lazy">
+              <span class="p-badge" style="color:rgba(255,255,255,.4)">ДО</span>
             </div>
-            <div class="col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03));display:flex;align-items:center;justify-content:center;flex-direction:column">
-              <span style="font-size:48px;opacity:.3">🏡</span>
-              <span style="font-size:12px;color:#c8a87c;margin-top:8px">ПОСЛЕ</span>
+            <div class="p-col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03))">
+              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&h=300&fit=crop&q=80" alt="После ремонта" loading="lazy">
+              <span class="p-badge" style="color:#c8a87c">ПОСЛЕ</span>
             </div>
           </div>
           <span class="label before">до</span>
@@ -409,13 +412,13 @@ img{max-width:100%;display:block}
       <div class="portfolio-card fade-in">
         <div class="img-wrap">
           <div class="row">
-            <div class="col" style="background:#e8e4dc;display:flex;align-items:center;justify-content:center;flex-direction:column">
-              <span style="font-size:48px;opacity:.3">🏚️</span>
-              <span style="font-size:12px;color:rgba(20,40,120,.2);margin-top:8px">ДО</span>
+            <div class="p-col" style="background:#2a2a3a">
+              <img src="https://images.unsplash.com/photo-1581858726788-75bcbedfbd88?w=400&h=300&fit=crop&q=80" alt="До ремонта" loading="lazy">
+              <span class="p-badge" style="color:rgba(255,255,255,.4)">ДО</span>
             </div>
-            <div class="col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03));display:flex;align-items:center;justify-content:center;flex-direction:column">
-              <span style="font-size:48px;opacity:.3">🏡</span>
-              <span style="font-size:12px;color:#c8a87c;margin-top:8px">ПОСЛЕ</span>
+            <div class="p-col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03))">
+              <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop&q=80" alt="После ремонта" loading="lazy">
+              <span class="p-badge" style="color:#c8a87c">ПОСЛЕ</span>
             </div>
           </div>
           <span class="label before">до</span>
@@ -435,13 +438,13 @@ img{max-width:100%;display:block}
       <div class="portfolio-card fade-in">
         <div class="img-wrap">
           <div class="row">
-            <div class="col" style="background:#e8e4dc;display:flex;align-items:center;justify-content:center;flex-direction:column">
-              <span style="font-size:48px;opacity:.3">🏚️</span>
-              <span style="font-size:12px;color:rgba(20,40,120,.2);margin-top:8px">ДО</span>
+            <div class="p-col" style="background:#2a2a3a">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=300&fit=crop&q=80" alt="До ремонта" loading="lazy">
+              <span class="p-badge" style="color:rgba(255,255,255,.4)">ДО</span>
             </div>
-            <div class="col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03));display:flex;align-items:center;justify-content:center;flex-direction:column">
-              <span style="font-size:48px;opacity:.3">🏡</span>
-              <span style="font-size:12px;color:#c8a87c;margin-top:8px">ПОСЛЕ</span>
+            <div class="p-col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03))">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop&q=80" alt="После ремонта" loading="lazy">
+              <span class="p-badge" style="color:#c8a87c">ПОСЛЕ</span>
             </div>
           </div>
           <span class="label before">до</span>
@@ -485,7 +488,7 @@ img{max-width:100%;display:block}
         <a href="#calculator" class="btn-primary">Рассчитать стоимость</a>
       </div>
       <div class="about-image fade-in-right">
-        <div class="img-placeholder"><span class="emoji">👷</span></div>
+        <div class="img-placeholder" style="overflow:hidden"><img src="https://images.unsplash.com/photo-1504307651254-84280e29209d?w=600&h=450&fit=crop&q=80" alt="Бригада РемПрофи" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="badge"><span class="n">12 лет</span><span class="t">безупречной работы</span></div>
       </div>
     </div>
