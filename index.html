@@ -9,181 +9,188 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#0b0e1a;color:#fff;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:#f5f5f0;color:#1a1a2e;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 .section{padding:100px 0}
 
-.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(11,14,26,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:.3s}
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(245,245,240,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(20,40,120,.08);transition:.3s}
 .header .container{display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:24px;letter-spacing:-.5px}
-.logo span{color:#f5a623}
-.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#f5a623,#e8831a);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:24px;letter-spacing:-.5px;color:#142878}
+.logo span{color:#c8a87c}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#142878,#1a3a9a);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;color:#fff}
 .nav{display:flex;gap:8px;align-items:center}
-.nav a{padding:8px 16px;font-size:14px;font-weight:500;color:rgba(255,255,255,.7);border-radius:8px;transition:.3s}
-.nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
-.nav .cta-btn{background:linear-gradient(135deg,#f5a623,#e8831a);color:#0b0e1a;font-weight:700;padding:10px 24px;border-radius:10px}
-.nav .cta-btn:hover{background:linear-gradient(135deg,#ffb840,#f09020);color:#0b0e1a}
+.nav a{padding:8px 16px;font-size:14px;font-weight:500;color:rgba(20,40,120,.65);border-radius:8px;transition:.3s}
+.nav a:hover{color:#142878;background:rgba(20,40,120,.06)}
+.nav .cta-btn{background:linear-gradient(135deg,#142878,#1a3a9a);color:#fff;font-weight:700;padding:10px 24px;border-radius:10px}
+.nav .cta-btn:hover{background:linear-gradient(135deg,#1a3a9a,#2450b8);color:#fff}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.burger span{width:28px;height:3px;background:#fff;border-radius:2px;transition:.3s}
+.burger span{width:28px;height:3px;background:#142878;border-radius:2px;transition:.3s}
 
 .hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero-bg .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15}
-.hero-bg .orb:nth-child(1){width:500px;height:500px;background:#f5a623;top:-100px;right:-100px}
-.hero-bg .orb:nth-child(2){width:400px;height:400px;background:#6c63ff;bottom:-80px;left:-120px}
-.hero-bg .orb:nth-child(3){width:300px;height:300px;background:#f5a623;bottom:30%;left:40%;opacity:.08}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg .wave{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(180deg,transparent,rgba(20,40,120,.03))}
 .hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);border-radius:50px;padding:6px 16px 6px 6px;font-size:13px;font-weight:500;color:#f5a623;margin-bottom:24px}
-.hero-badge .dot{width:26px;height:26px;border-radius:50%;background:#f5a623;display:flex;align-items:center;justify-content:center;color:#0b0e1a;font-weight:800;font-size:14px}
-.hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px}
-.hero h1 .highlight{background:linear-gradient(135deg,#f5a623,#ffb840);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:18px;line-height:1.6;color:rgba(255,255,255,.6);margin-bottom:32px;max-width:520px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(20,40,120,.08);border:1px solid rgba(20,40,120,.15);border-radius:50px;padding:6px 16px 6px 6px;font-size:13px;font-weight:500;color:#142878;margin-bottom:24px}
+.hero-badge .dot{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#142878,#1a3a9a);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:12px}
+.hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;color:#142878;margin-bottom:20px}
+.hero h1 .highlight{color:#c8a87c}
+.hero p{font-size:18px;line-height:1.6;color:rgba(20,40,120,.55);margin-bottom:32px;max-width:520px}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#f5a623,#e8831a);color:#0b0e1a;font-weight:700;font-size:16px;padding:16px 36px;border-radius:12px;border:none;cursor:pointer;transition:.3s;font-family:'Inter',sans-serif}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(245,166,35,.3)}
-.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-weight:600;font-size:16px;padding:16px 36px;border-radius:12px;cursor:pointer;transition:.3s;text-decoration:none}
-.btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
-.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06)}
-.hero-stats .stat h3{font-size:32px;font-weight:800;color:#f5a623}
-.hero-stats .stat p{font-size:13px;color:rgba(255,255,255,.5);margin:0}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#142878,#1a3a9a);color:#fff;font-weight:700;font-size:16px;padding:16px 36px;border-radius:12px;border:none;cursor:pointer;transition:.3s;font-family:'Inter',sans-serif}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(20,40,120,.25)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:rgba(20,40,120,.04);border:1px solid rgba(20,40,120,.12);color:#142878;font-weight:600;font-size:16px;padding:16px 36px;border-radius:12px;cursor:pointer;transition:.3s;text-decoration:none}
+.btn-secondary:hover{background:rgba(20,40,120,.08);border-color:rgba(20,40,120,.2)}
+.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(20,40,120,.06)}
+.hero-stats .stat h3{font-size:32px;font-weight:800;color:#142878}
+.hero-stats .stat p{font-size:13px;color:rgba(20,40,120,.45);margin:0}
 .hero-right{position:relative;display:flex;justify-content:center}
-.hero-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:40px;backdrop-filter:blur(20px);width:100%;max-width:440px}
-.hero-card h3{font-size:20px;font-weight:700;margin-bottom:20px;text-align:center}
-.hero-strip{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(245,166,35,.08);border-radius:10px;padding:14px 20px;margin-bottom:20px;font-size:14px;color:rgba(255,255,255,.7)}
-.hero-strip strong{color:#f5a623}
+.hero-card{background:#fff;border:1px solid rgba(20,40,120,.08);border-radius:20px;padding:36px;box-shadow:0 8px 40px rgba(20,40,120,.06);width:100%;max-width:440px}
+.hero-card h3{font-size:20px;font-weight:700;margin-bottom:20px;text-align:center;color:#142878}
+.hero-strip{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(200,168,124,.1);border:1px solid rgba(200,168,124,.2);border-radius:10px;padding:14px 20px;margin-bottom:20px;font-size:14px;color:rgba(20,40,120,.65)}
+.hero-strip strong{color:#c8a87c}
 .hero-card .btn-primary{width:100%;justify-content:center;font-size:15px;padding:16px}
 
 .section-header{text-align:center;margin-bottom:60px}
-.section-header .label{display:inline-block;font-size:13px;font-weight:600;color:#f5a623;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
-.section-header h2{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.2}
-.section-header h2 .highlight{background:linear-gradient(135deg,#f5a623,#ffb840);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.section-header p{font-size:17px;color:rgba(255,255,255,.5);margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto}
+.section-header .label{display:inline-block;font-size:12px;font-weight:700;color:#c8a87c;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-header h2{font-size:38px;font-weight:800;letter-spacing:-1px;line-height:1.2;color:#142878}
+.section-header h2 .highlight{color:#c8a87c}
+.section-header p{font-size:17px;color:rgba(20,40,120,.5);margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto}
 
-.services{background:linear-gradient(180deg,#0b0e1a,#111627)}
+.services{background:#fff}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.service-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:32px 24px;text-align:center;transition:.3s;cursor:default}
-.service-card:hover{background:rgba(245,166,35,.06);border-color:rgba(245,166,35,.2);transform:translateY(-4px)}
+.service-card{background:#fafaf7;border:1px solid rgba(20,40,120,.06);border-radius:16px;padding:32px 24px;text-align:center;transition:.3s;cursor:default}
+.service-card:hover{box-shadow:0 8px 30px rgba(20,40,120,.06);border-color:rgba(200,168,124,.3);transform:translateY(-4px)}
 .service-card .icon{font-size:44px;margin-bottom:16px;display:block}
-.service-card h4{font-size:20px;font-weight:700;margin-bottom:8px}
-.service-card p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.55);margin-bottom:16px}
-.service-card .tag{display:inline-block;font-size:11px;font-weight:600;color:#f5a623;background:rgba(245,166,35,.1);padding:4px 12px;border-radius:50px}
+.service-card h4{font-size:19px;font-weight:700;margin-bottom:8px;color:#142878}
+.service-card p{font-size:14px;line-height:1.6;color:rgba(20,40,120,.55);margin-bottom:16px}
+.service-card .tag{display:inline-block;font-size:11px;font-weight:700;color:#c8a87c;background:rgba(200,168,124,.1);padding:4px 14px;border-radius:50px}
 
-.portfolio{background:#0b0e1a}
+.portfolio{background:#f5f5f0}
 .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.portfolio-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;transition:.3s}
-.portfolio-card:hover{border-color:rgba(245,166,35,.2);transform:translateY(-4px)}
+.portfolio-card{background:#fff;border:1px solid rgba(20,40,120,.06);border-radius:16px;overflow:hidden;transition:.3s;box-shadow:0 4px 20px rgba(20,40,120,.04)}
+.portfolio-card:hover{box-shadow:0 12px 40px rgba(20,40,120,.08);border-color:rgba(200,168,124,.2);transform:translateY(-4px)}
 .portfolio-card .img-wrap{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden}
 .portfolio-card .img-wrap .row{display:flex;height:100%}
 .portfolio-card .img-wrap .row .col{flex:1;position:relative;overflow:hidden}
-.portfolio-card .img-wrap .row .col img{width:100%;height:100%;object-fit:cover;display:block}
-.portfolio-card .img-wrap .label{position:absolute;top:12px;border-radius:6px;font-size:11px;font-weight:700;padding:4px 12px;text-transform:uppercase;letter-spacing:.5px}
-.portfolio-card .img-wrap .label.before{left:12px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
-.portfolio-card .img-wrap .label.after{right:12px;background:#f5a623;color:#0b0e1a}
-.portfolio-card .img-wrap .divider{position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(245,166,35,.6);transform:translateX(-50%);z-index:2}
-.portfolio-card .img-wrap .divider::before{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#f5a623;color:#0b0e1a;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.portfolio-card .img-wrap .label{position:absolute;top:12px;border-radius:6px;font-size:11px;font-weight:700;padding:4px 12px;text-transform:uppercase;letter-spacing:.5px;z-index:3}
+.portfolio-card .img-wrap .label.before{left:12px;background:rgba(20,40,120,.08);color:rgba(20,40,120,.5)}
+.portfolio-card .img-wrap .label.after{right:12px;background:#142878;color:#fff}
+.portfolio-card .img-wrap .divider{position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(200,168,124,.5);transform:translateX(-50%);z-index:2}
+.portfolio-card .img-wrap .divider::before{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#c8a87c;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
 .portfolio-card .info{padding:20px 24px 24px}
-.portfolio-card .info h4{font-size:17px;font-weight:700;margin-bottom:4px}
-.portfolio-card .info p{font-size:13px;color:rgba(255,255,255,.45)}
-.portfolio-card .info .meta{display:flex;gap:16px;margin-top:10px;font-size:12px;color:rgba(255,255,255,.4)}
+.portfolio-card .info h4{font-size:17px;font-weight:700;color:#142878;margin-bottom:4px}
+.portfolio-card .info p{font-size:13px;color:rgba(20,40,120,.45)}
+.portfolio-card .info .meta{display:flex;gap:16px;margin-top:10px;font-size:12px;color:rgba(20,40,120,.4)}
 .portfolio-card .info .meta span{display:flex;align-items:center;gap:4px}
-.portfolio-card .info .meta .dot{color:#f5a623}
+.portfolio-card .info .meta .dot{color:#c8a87c}
 
-.about{background:#111627;position:relative;overflow:hidden}
+.about{background:#fff;position:relative;overflow:hidden}
 .about .abg{position:absolute;inset:0;pointer-events:none}
 .about .abg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.06}
-.about .abg .orb:nth-child(1){width:400px;height:400px;background:#f5a623;top:-100px;left:-80px}
-.about .abg .orb:nth-child(2){width:350px;height:350px;background:#6c63ff;bottom:-100px;right:-80px}
+.about .abg .orb:nth-child(1){width:400px;height:400px;background:#142878;top:-100px;left:-80px}
+.about .abg .orb:nth-child(2){width:350px;height:350px;background:#c8a87c;bottom:-100px;right:-80px}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
-.about-content .label{font-size:13px;font-weight:600;color:#f5a623;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
-.about-content h2{font-size:36px;font-weight:800;letter-spacing:-1px;line-height:1.2;margin-bottom:20px}
-.about-content .highlight{background:linear-gradient(135deg,#f5a623,#ffb840);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.about-content p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:20px}
+.about-content .label{font-size:12px;font-weight:700;color:#c8a87c;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.about-content h2{font-size:36px;font-weight:800;letter-spacing:-1px;line-height:1.2;color:#142878;margin-bottom:20px}
+.about-content .highlight{color:#c8a87c}
+.about-content p{font-size:16px;line-height:1.7;color:rgba(20,40,120,.6);margin-bottom:20px}
 .about-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
-.about-features li{list-style:none;display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.7)}
-.about-features li .check{width:20px;height:20px;border-radius:6px;background:rgba(245,166,35,.15);display:flex;align-items:center;justify-content:center;color:#f5a623;font-size:12px;flex-shrink:0}
-.about-numbers{display:flex;gap:40px;padding:24px 0;border-top:1px solid rgba(255,255,255,.06)}
-.about-numbers .num h4{font-size:32px;font-weight:800;color:#f5a623}
-.about-numbers .num p{font-size:13px;margin:0;color:rgba(255,255,255,.5)}
+.about-features li{list-style:none;display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(20,40,120,.7)}
+.about-features li .check{width:20px;height:20px;border-radius:6px;background:rgba(200,168,124,.15);display:flex;align-items:center;justify-content:center;color:#c8a87c;font-size:12px;flex-shrink:0}
+.about-numbers{display:flex;gap:40px;padding:24px 0;border-top:1px solid rgba(20,40,120,.06)}
+.about-numbers .num h4{font-size:32px;font-weight:800;color:#142878}
+.about-numbers .num p{font-size:13px;margin:0;color:rgba(20,40,120,.5)}
 .about-image{position:relative}
-.about-image .img-placeholder{width:100%;aspect-ratio:4/3;border-radius:20px;background:linear-gradient(135deg,rgba(245,166,35,.1),rgba(108,99,255,.08));border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-image .img-placeholder{width:100%;aspect-ratio:4/3;border-radius:20px;background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.04));border:1px solid rgba(20,40,120,.06);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .about-image .img-placeholder .emoji{font-size:90px}
-.about-image .badge{position:absolute;bottom:-16px;left:-16px;background:linear-gradient(135deg,#f5a623,#e8831a);color:#0b0e1a;padding:16px 24px;border-radius:16px;font-weight:800;text-align:center}
+.about-image .badge{position:absolute;bottom:-16px;left:-16px;background:linear-gradient(135deg,#142878,#1a3a9a);color:#fff;padding:16px 24px;border-radius:16px;font-weight:800;text-align:center;box-shadow:0 8px 30px rgba(20,40,120,.2)}
 .about-image .badge .n{font-size:28px;display:block;line-height:1}
 .about-image .badge .t{font-size:12px;font-weight:600;opacity:.8}
 
-.reviews{background:#0b0e1a}
+.reviews{background:#f5f5f0}
 .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.review-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:28px;transition:.3s}
-.review-card:hover{border-color:rgba(245,166,35,.15)}
-.review-card .stars{color:#f5a623;font-size:16px;margin-bottom:12px;letter-spacing:2px}
-.review-card blockquote{font-size:14px;line-height:1.7;color:rgba(255,255,255,.65);margin-bottom:16px;font-style:italic}
+.review-card{background:#fff;border:1px solid rgba(20,40,120,.06);border-radius:16px;padding:28px;transition:.3s;box-shadow:0 4px 20px rgba(20,40,120,.03)}
+.review-card:hover{box-shadow:0 8px 30px rgba(20,40,120,.06);border-color:rgba(200,168,124,.2)}
+.review-card .stars{color:#c8a87c;font-size:16px;margin-bottom:12px;letter-spacing:2px}
+.review-card blockquote{font-size:14px;line-height:1.7;color:rgba(20,40,120,.65);margin-bottom:16px;font-style:italic}
 .review-card .author{display:flex;align-items:center;gap:12px}
-.review-card .author .avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,rgba(245,166,35,.2),rgba(108,99,255,.15));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#f5a623}
-.review-card .author .info strong{display:block;font-size:14px;font-weight:600}
-.review-card .author .info span{font-size:12px;color:rgba(255,255,255,.4)}
+.review-card .author .avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,rgba(200,168,124,.2),rgba(20,40,120,.08));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#142878}
+.review-card .author .info strong{display:block;font-size:14px;font-weight:600;color:#142878}
+.review-card .author .info span{font-size:12px;color:rgba(20,40,120,.4)}
 
-.calculator{padding:100px 0;background:#111627;position:relative;overflow:hidden}
-.calculator .cbg{position:absolute;inset:0;pointer-events:none}
-.calculator .cbg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.07}
-.calculator .cbg .orb:nth-child(1){width:500px;height:500px;background:#f5a623;top:-120px;right:-100px}
-.calculator .cbg .orb:nth-child(2){width:350px;height:350px;background:#6c63ff;bottom:-100px;left:-80px}
+.calc-section{padding:100px 0;background:#fff;position:relative;overflow:hidden}
+.calc-section .cbg{position:absolute;inset:0;pointer-events:none}
+.calc-section .cbg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.05}
+.calc-section .cbg .orb:nth-child(1){width:500px;height:500px;background:#142878;top:-120px;right:-100px}
+.calc-section .cbg .orb:nth-child(2){width:350px;height:350px;background:#c8a87c;bottom:-100px;left:-80px}
 .calc-wrap{max-width:800px;margin:0 auto;position:relative;z-index:1}
-.calc-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:24px;padding:48px}
+.calc-card{background:#fafaf7;border:1px solid rgba(20,40,120,.06);border-radius:24px;padding:48px;box-shadow:0 8px 40px rgba(20,40,120,.04)}
 .calc-row{margin-bottom:24px}
-.calc-row label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:rgba(255,255,255,.8)}
-.calc-row label .hint{font-weight:400;font-size:12px;color:rgba(255,255,255,.35)}
-.calc-row select,.calc-row input[type="number"]{width:100%;padding:14px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#fff;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:.3s}
-.calc-row select option{background:#1a1d2e;color:#fff}
-.calc-row select:focus,.calc-row input:focus{border-color:#f5a623;background:rgba(245,166,35,.05)}
-.calc-row input[type="range"]{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:rgba(255,255,255,.1);outline:none;transition:.3s;margin-top:8px}
-.calc-row input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#f5a623,#e8831a);cursor:pointer;border:none}
-.calc-row input[type="range"]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#f5a623,#e8831a);cursor:pointer;border:none}
+.calc-row label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:#142878}
+.calc-row label .hint{font-weight:400;font-size:12px;color:rgba(20,40,120,.35)}
+.calc-row select,.calc-row input[type="number"]{width:100%;padding:14px 18px;background:#fff;border:1px solid rgba(20,40,120,.1);border-radius:10px;color:#142878;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:.3s}
+.calc-row select option{background:#fff;color:#142878}
+.calc-row select:focus,.calc-row input:focus{border-color:#c8a87c;box-shadow:0 0 0 3px rgba(200,168,124,.1)}
+.calc-row input[type="range"]{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:rgba(20,40,120,.1);outline:none;transition:.3s;margin-top:8px}
+.calc-row input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#142878,#1a3a9a);cursor:pointer;border:none;box-shadow:0 2px 8px rgba(20,40,120,.2)}
+.calc-row input[type="range"]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#142878,#1a3a9a);cursor:pointer;border:none}
 .calc-range-header{display:flex;justify-content:space-between;align-items:center}
-.calc-range-header .val{font-size:20px;font-weight:700;color:#f5a623}
+.calc-range-header .val{font-size:20px;font-weight:700;color:#142878}
 .calc-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.calc-option{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;cursor:pointer;transition:.3s;font-size:14px;color:rgba(255,255,255,.7)}
-.calc-option:hover{border-color:rgba(245,166,35,.2)}
-.calc-option input[type="checkbox"]{-webkit-appearance:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.2);border-radius:4px;cursor:pointer;transition:.3s;flex-shrink:0;position:relative}
-.calc-option input[type="checkbox"]:checked{background:#f5a623;border-color:#f5a623}
-.calc-option input[type="checkbox"]:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#0b0e1a;font-size:12px;font-weight:700}
-.calc-option.selected{border-color:rgba(245,166,35,.3);background:rgba(245,166,35,.06)}
-.calc-result{padding:28px;border-radius:16px;background:rgba(245,166,35,.05);border:1px solid rgba(245,166,35,.15);margin-top:8px}
+.calc-option{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border:1px solid rgba(20,40,120,.06);border-radius:10px;cursor:pointer;transition:.3s;font-size:14px;color:rgba(20,40,120,.7)}
+.calc-option:hover{border-color:rgba(200,168,124,.3)}
+.calc-option input[type="checkbox"]{-webkit-appearance:none;width:18px;height:18px;border:2px solid rgba(20,40,120,.15);border-radius:4px;cursor:pointer;transition:.3s;flex-shrink:0;position:relative}
+.calc-option input[type="checkbox"]:checked{background:#142878;border-color:#142878}
+.calc-option input[type="checkbox"]:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700}
+.calc-option.selected{border-color:rgba(200,168,124,.3);background:rgba(200,168,124,.04)}
+.calc-result{padding:28px;border-radius:16px;background:rgba(20,40,120,.03);border:1px solid rgba(20,40,120,.08);margin-top:8px}
 .calc-result .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.calc-result .row .price-large{font-size:42px;font-weight:900;color:#f5a623;letter-spacing:-1px}
-.calc-result .row .price-large span{font-size:18px;font-weight:500;color:rgba(255,255,255,.4)}
-.calc-result .detail{font-size:13px;color:rgba(255,255,255,.4);margin-top:4px}
-.calc-result .detail span{margin:0 12px;color:rgba(255,255,255,.15)}
+.calc-result .row .price-large{font-size:42px;font-weight:900;color:#142878;letter-spacing:-1px}
+.calc-result .row .price-large span{font-size:18px;font-weight:500;color:rgba(20,40,120,.4)}
+.calc-result .detail{font-size:13px;color:rgba(20,40,120,.4);margin-top:4px}
 .calc-result .btn-primary{margin-top:16px;width:100%;justify-content:center}
-.calc-result .note{font-size:12px;color:rgba(255,255,255,.3);margin-top:12px;text-align:center}
-.calc-hint{font-size:12px;color:rgba(255,255,255,.3);margin-top:6px}
+.calc-result .note{font-size:12px;color:rgba(20,40,120,.3);margin-top:12px;text-align:center}
 
-.final-cta{padding:100px 0;background:#0b0e1a;position:relative;overflow:hidden}
+.benefits{background:#f5f5f0}
+.benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.benefit-card{background:#fff;border:1px solid rgba(20,40,120,.06);border-radius:16px;padding:32px 24px;text-align:center;transition:.3s;box-shadow:0 4px 20px rgba(20,40,120,.03)}
+.benefit-card:hover{box-shadow:0 8px 30px rgba(20,40,120,.06);transform:translateY(-4px)}
+.benefit-card .icon{font-size:40px;margin-bottom:14px;display:block}
+.benefit-card h4{font-size:18px;font-weight:700;color:#142878;margin-bottom:8px}
+.benefit-card p{font-size:14px;line-height:1.6;color:rgba(20,40,120,.55);margin:0}
+
+.final-cta{padding:100px 0;background:linear-gradient(135deg,#142878,#0f1e5a);position:relative;overflow:hidden}
 .final-cta .fbg{position:absolute;inset:0;pointer-events:none}
-.final-cta .fbg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.08}
-.final-cta .fbg .orb:nth-child(1){width:500px;height:500px;background:#f5a623;top:-150px;right:-100px}
-.final-cta .fbg .orb:nth-child(2){width:400px;height:400px;background:#6c63ff;bottom:-120px;left:-100px}
+.final-cta .fbg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.1}
+.final-cta .fbg .orb:nth-child(1){width:500px;height:500px;background:#c8a87c;top:-150px;right:-100px}
+.final-cta .fbg .orb:nth-child(2){width:400px;height:400px;background:#fff;bottom:-120px;left:-100px;opacity:.05}
 .final-cta .container{position:relative;z-index:1;text-align:center}
-.final-cta h2{font-size:42px;font-weight:900;letter-spacing:-1.5px;line-height:1.15;margin-bottom:16px}
-.final-cta h2 .highlight{background:linear-gradient(135deg,#f5a623,#ffb840);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.final-cta h2{font-size:40px;font-weight:900;letter-spacing:-1.5px;line-height:1.15;color:#fff;margin-bottom:16px}
+.final-cta h2 .highlight{color:#c8a87c}
 .final-cta p{font-size:18px;color:rgba(255,255,255,.55);max-width:600px;margin:0 auto 36px}
 .final-cta .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.final-cta .btn-primary{background:linear-gradient(135deg,#c8a87c,#b8956a);color:#142878;font-weight:800}
+.final-cta .btn-primary:hover{box-shadow:0 12px 40px rgba(200,168,124,.3)}
+.final-cta .btn-secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff}
+.final-cta .btn-secondary:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
 .final-cta .guarantee{display:flex;justify-content:center;gap:32px;margin-top:40px;flex-wrap:wrap}
-.final-cta .guarantee span{font-size:14px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:8px}
+.final-cta .guarantee span{font-size:14px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:8px}
 
-.footer{background:#080b15;padding:40px 0;border-top:1px solid rgba(255,255,255,.04)}
+.footer{background:#0f1e5a;padding:40px 0;border-top:1px solid rgba(255,255,255,.06)}
 .footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer p{font-size:13px;color:rgba(255,255,255,.3)}
 .footer-links{display:flex;gap:24px}
 .footer-links a{font-size:13px;color:rgba(255,255,255,.35);transition:.3s}
-.footer-links a:hover{color:#f5a623}
+.footer-links a:hover{color:#c8a87c}
 
-.modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);align-items:center;justify-content:center}
+.modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,30,90,.5);backdrop-filter:blur(8px);align-items:center;justify-content:center}
 .modal-overlay.active{display:flex}
-.modal{background:#1a1d2e;border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:48px;max-width:440px;width:90%;text-align:center}
+.modal{background:#fff;border-radius:24px;padding:48px;max-width:440px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(15,30,90,.15)}
 .modal .icon{font-size:56px;margin-bottom:16px}
-.modal h3{font-size:24px;font-weight:700;margin-bottom:8px}
-.modal p{font-size:15px;color:rgba(255,255,255,.55);margin-bottom:24px}
+.modal h3{font-size:24px;font-weight:700;color:#142878;margin-bottom:8px}
+.modal p{font-size:15px;color:rgba(20,40,120,.55);margin-bottom:24px}
 .modal .mo{display:flex;gap:12px;justify-content:center}
 
 .fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease}
@@ -202,9 +209,10 @@ a{text-decoration:none;color:inherit}
   .review-grid{grid-template-columns:1fr 1fr}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .about-image{max-width:500px;margin:0 auto}
+  .benefits-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
-  .nav{display:none;position:fixed;top:72px;left:0;right:0;background:#0b0e1a;border-bottom:1px solid rgba(255,255,255,.06);padding:16px 20px;flex-direction:column;gap:4px}
+  .nav{display:none;position:fixed;top:72px;left:0;right:0;background:#fafaf7;border-bottom:1px solid rgba(20,40,120,.06);padding:16px 20px;flex-direction:column;gap:4px;box-shadow:0 8px 30px rgba(20,40,120,.06)}
   .nav.open{display:flex}
   .nav a{padding:12px 16px;width:100%}
   .burger{display:flex}
@@ -221,6 +229,7 @@ a{text-decoration:none;color:inherit}
   .calc-result .row{flex-direction:column;text-align:center}
   .final-cta h2{font-size:28px}
   .portfolio-card .img-wrap{aspect-ratio:4/3}
+  .benefits-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
   .footer .container{flex-direction:column;text-align:center}
 }
 @media(max-width:480px){
@@ -228,7 +237,7 @@ a{text-decoration:none;color:inherit}
   .hero-btns{flex-direction:column}
   .hero-btns .btn-primary,.hero-btns .btn-secondary{width:100%;justify-content:center}
   .section{padding:60px 0}
-  .calculator{padding:60px 0}
+  .calc-section{padding:60px 0}
 }
 </style>
 </head>
@@ -256,9 +265,9 @@ a{text-decoration:none;color:inherit}
 
 <section class="hero" id="hero">
   <div class="hero-bg">
-    <div class="orb"></div>
-    <div class="orb"></div>
-    <div class="orb"></div>
+    <div class="orb" style="position:absolute;border-radius:50%;filter:blur(100px);opacity:.06;background:#142878;width:500px;height:500px;top:-100px;right:-100px"></div>
+    <div class="orb" style="position:absolute;border-radius:50%;filter:blur(100px);opacity:.04;background:#c8a87c;width:400px;height:400px;bottom:-80px;left:-120px"></div>
+    <div class="wave"></div>
   </div>
   <div class="container">
     <div class="hero-left fade-in-left">
@@ -283,7 +292,7 @@ a{text-decoration:none;color:inherit}
         <h3>📐 Узнайте точную стоимость ремонта</h3>
         <div class="hero-strip">⏱ Расчёт займёт <strong>30 секунд</strong></div>
         <a href="#calculator" class="btn-primary">Открыть калькулятор →</a>
-        <p style="text-align:center;font-size:12px;color:rgba(255,255,255,.3);margin-top:14px">Цена не изменится после подписания договора</p>
+        <p style="text-align:center;font-size:12px;color:rgba(20,40,120,.3);margin-top:14px">Цена не изменится после подписания договора</p>
       </div>
     </div>
   </div>
@@ -306,31 +315,31 @@ a{text-decoration:none;color:inherit}
       <div class="service-card fade-in">
         <span class="icon">🏗️</span>
         <h4>Капитальный ремонт</h4>
-        <p>Полное обновление квартиры: стяжка пола, штукатурка стен, замена проводки, сантехники, перепланировка помещений.</p>
+        <p>Полное обновление квартиры: стяжка пола, штукатурка стен, замена проводки, сантехники, перепланировка.</p>
         <span class="tag">от 8 000 ₽/м²</span>
       </div>
       <div class="service-card fade-in">
         <span class="icon">✨</span>
         <h4>Дизайнерский ремонт</h4>
-        <p>Индивидуальный дизайн-проект, авторский надзор, премиальные материалы, сложные архитектурные решения и освещение.</p>
+        <p>Индивидуальный дизайн-проект, авторский надзор, премиальные материалы, сложные архитектурные решения.</p>
         <span class="tag">от 14 000 ₽/м²</span>
       </div>
       <div class="service-card fade-in">
         <span class="icon">🛁</span>
         <h4>Ремонт ванной и туалета</h4>
-        <p>Гидроизоляция, плитка «под ключ», установка ванны, душевой кабины, унитаза, полотенцесушителя и всей сантехники.</p>
+        <p>Гидроизоляция, плитка «под ключ», установка сантехники, душевой кабины, полотенцесушителя.</p>
         <span class="tag">от 120 000 ₽</span>
       </div>
       <div class="service-card fade-in">
         <span class="icon">🍳</span>
         <h4>Ремонт кухни</h4>
-        <p>Разводка воды и электричества, установка кухонного гарнитура, вытяжка, фартук, фурнитура — всё под ключ.</p>
+        <p>Разводка воды и электричества, установка гарнитура, вытяжка, фартук, фурнитура — всё под ключ.</p>
         <span class="tag">от 90 000 ₽</span>
       </div>
       <div class="service-card fade-in">
         <span class="icon">📐</span>
         <h4>Отделка новостройки</h4>
-        <p>Черновая и чистовая отделка квартиры с нуля. Выравнивание стен, потолка, пола — полная готовность к заселению.</p>
+        <p>Черновая и чистовая отделка с нуля. Выравнивание стен, потолка, пола — готовность к заселению.</p>
         <span class="tag">от 6 500 ₽/м²</span>
       </div>
     </div>
@@ -348,13 +357,13 @@ a{text-decoration:none;color:inherit}
       <div class="portfolio-card fade-in">
         <div class="img-wrap">
           <div class="row">
-            <div class="col" style="background:#1e2340;display:flex;align-items:center;justify-content:center;flex-direction:column">
+            <div class="col" style="background:#e8e4dc;display:flex;align-items:center;justify-content:center;flex-direction:column">
               <span style="font-size:48px;opacity:.3">🏚️</span>
-              <span style="font-size:12px;color:rgba(255,255,255,.2);margin-top:8px">ДО</span>
+              <span style="font-size:12px;color:rgba(20,40,120,.2);margin-top:8px">ДО</span>
             </div>
-            <div class="col" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(108,99,255,.05));display:flex;align-items:center;justify-content:center;flex-direction:column">
+            <div class="col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03));display:flex;align-items:center;justify-content:center;flex-direction:column">
               <span style="font-size:48px;opacity:.3">🏡</span>
-              <span style="font-size:12px;color:#f5a623;margin-top:8px">ПОСЛЕ</span>
+              <span style="font-size:12px;color:#c8a87c;margin-top:8px">ПОСЛЕ</span>
             </div>
           </div>
           <span class="label before">до</span>
@@ -374,13 +383,13 @@ a{text-decoration:none;color:inherit}
       <div class="portfolio-card fade-in">
         <div class="img-wrap">
           <div class="row">
-            <div class="col" style="background:#1e2340;display:flex;align-items:center;justify-content:center;flex-direction:column">
+            <div class="col" style="background:#e8e4dc;display:flex;align-items:center;justify-content:center;flex-direction:column">
               <span style="font-size:48px;opacity:.3">🏚️</span>
-              <span style="font-size:12px;color:rgba(255,255,255,.2);margin-top:8px">ДО</span>
+              <span style="font-size:12px;color:rgba(20,40,120,.2);margin-top:8px">ДО</span>
             </div>
-            <div class="col" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(108,99,255,.05));display:flex;align-items:center;justify-content:center;flex-direction:column">
+            <div class="col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03));display:flex;align-items:center;justify-content:center;flex-direction:column">
               <span style="font-size:48px;opacity:.3">🏡</span>
-              <span style="font-size:12px;color:#f5a623;margin-top:8px">ПОСЛЕ</span>
+              <span style="font-size:12px;color:#c8a87c;margin-top:8px">ПОСЛЕ</span>
             </div>
           </div>
           <span class="label before">до</span>
@@ -400,13 +409,13 @@ a{text-decoration:none;color:inherit}
       <div class="portfolio-card fade-in">
         <div class="img-wrap">
           <div class="row">
-            <div class="col" style="background:#1e2340;display:flex;align-items:center;justify-content:center;flex-direction:column">
+            <div class="col" style="background:#e8e4dc;display:flex;align-items:center;justify-content:center;flex-direction:column">
               <span style="font-size:48px;opacity:.3">🏚️</span>
-              <span style="font-size:12px;color:rgba(255,255,255,.2);margin-top:8px">ДО</span>
+              <span style="font-size:12px;color:rgba(20,40,120,.2);margin-top:8px">ДО</span>
             </div>
-            <div class="col" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(108,99,255,.05));display:flex;align-items:center;justify-content:center;flex-direction:column">
+            <div class="col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03));display:flex;align-items:center;justify-content:center;flex-direction:column">
               <span style="font-size:48px;opacity:.3">🏡</span>
-              <span style="font-size:12px;color:#f5a623;margin-top:8px">ПОСЛЕ</span>
+              <span style="font-size:12px;color:#c8a87c;margin-top:8px">ПОСЛЕ</span>
             </div>
           </div>
           <span class="label before">до</span>
@@ -426,13 +435,13 @@ a{text-decoration:none;color:inherit}
       <div class="portfolio-card fade-in">
         <div class="img-wrap">
           <div class="row">
-            <div class="col" style="background:#1e2340;display:flex;align-items:center;justify-content:center;flex-direction:column">
+            <div class="col" style="background:#e8e4dc;display:flex;align-items:center;justify-content:center;flex-direction:column">
               <span style="font-size:48px;opacity:.3">🏚️</span>
-              <span style="font-size:12px;color:rgba(255,255,255,.2);margin-top:8px">ДО</span>
+              <span style="font-size:12px;color:rgba(20,40,120,.2);margin-top:8px">ДО</span>
             </div>
-            <div class="col" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(108,99,255,.05));display:flex;align-items:center;justify-content:center;flex-direction:column">
+            <div class="col" style="background:linear-gradient(135deg,rgba(200,168,124,.08),rgba(20,40,120,.03));display:flex;align-items:center;justify-content:center;flex-direction:column">
               <span style="font-size:48px;opacity:.3">🏡</span>
-              <span style="font-size:12px;color:#f5a623;margin-top:8px">ПОСЛЕ</span>
+              <span style="font-size:12px;color:#c8a87c;margin-top:8px">ПОСЛЕ</span>
             </div>
           </div>
           <span class="label before">до</span>
@@ -464,7 +473,7 @@ a{text-decoration:none;color:inherit}
         <div class="label">о компании</div>
         <h2>Ремонт без головной боли — это <span class="highlight">РемПрофи</span></h2>
         <p>Мы работаем на рынке отделочных работ больше 12 лет. За это время сдали более 150 объектов — от малогабаритных студий до квартир премиум-класса.</p>
-        <p>Наша главная ценность — предсказуемый результат. Вы заранее знаете точную стоимость, сроки и что получите в итоге. Никаких скрытых доплат, никаких «ой, это не входило в смету».</p>
+        <p>Наша главная ценность — предсказуемый результат. Вы заранее знаете точную стоимость, сроки и что получите в итоге. Никаких скрытых доплат.</p>
         <ul class="about-features">
           <li><span class="check">✓</span>12 лет опыта на рынке ремонта</li>
           <li><span class="check">✓</span>Только штатные сотрудники</li>
@@ -493,7 +502,7 @@ a{text-decoration:none;color:inherit}
     <div class="review-grid">
       <div class="review-card fade-in">
         <div class="stars">★★★★★</div>
-        <blockquote>"Сделали капитальный ремонт в двушке. Очень переживали за сроки, но ребята закончили даже на неделю раньше! Качество на высоте. Отдельное спасибо дизайнеру — продумали каждую мелочь."</blockquote>
+        <blockquote>"Сделали капитальный ремонт в двушке. Очень переживали за сроки, но ребята закончили даже на неделю раньше! Качество на высоте. Отдельное спасибо дизайнеру."</blockquote>
         <div class="author">
           <div class="avatar">Е</div>
           <div class="info"><strong>Елена</strong><span>Капитальный ремонт, 62 м²</span></div>
@@ -501,7 +510,7 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="review-card fade-in">
         <div class="stars">★★★★★</div>
-        <blockquote>"Заказывали ремонт в новостройке. Черновую отделку сделали идеально ровно, все углы 90°, проводка по проекту. Сдали квартиру точно в срок. Буду советовать знакомым!"</blockquote>
+        <blockquote>"Заказывали ремонт в новостройке. Черновую отделку сделали идеально ровно, все углы 90°, проводка по проекту. Сдали квартиру точно в срок."</blockquote>
         <div class="author">
           <div class="avatar">А</div>
           <div class="info"><strong>Алексей</strong><span>Отделка новостройки, 45 м²</span></div>
@@ -517,7 +526,7 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="review-card fade-in">
         <div class="stars">★★★★★</div>
-        <blockquote>"Делали дизайнерский ремонт в студии. Получилось просто вау! Соседи приходят и не верят, что это та же квартира. Материалы помогли выбрать с оптимальным соотношением цена-качество."</blockquote>
+        <blockquote>"Делали дизайнерский ремонт в студии. Получилось просто вау! Соседи приходят и не верят, что это та же квартира. Помогли с выбором материалов."</blockquote>
         <div class="author">
           <div class="avatar">М</div>
           <div class="info"><strong>Марина</strong><span>Дизайнерский ремонт, 34 м²</span></div>
@@ -525,7 +534,7 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="review-card fade-in">
         <div class="stars">★★★★★</div>
-        <blockquote>"Ремонт в ванной делали — полностью поменяли сантехнику, плитку, установили душевую. Мастера аккуратные, всё убирали за собой. Очень довольны результатом!"</blockquote>
+        <blockquote>"Ремонт в ванной — полностью поменяли сантехнику, плитку, установили душевую. Мастера аккуратные, всё убирали за собой. Очень довольны!"</blockquote>
         <div class="author">
           <div class="avatar">Т</div>
           <div class="info"><strong>Татьяна</strong><span>Ремонт ванной, 6 м²</span></div>
@@ -533,7 +542,7 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="review-card fade-in">
         <div class="stars">★★★★★</div>
-        <blockquote>"Первый раз делали ремонт и очень переживали. Но команда РемПрофи всё объяснила, показала материалы, согласовала каждый этап. Результат превзошёл ожидания. Спасибо!"</blockquote>
+        <blockquote>"Первый раз делали ремонт и очень переживали. Команда РемПрофи всё объяснила, показала материалы, согласовала каждый этап. Результат превзошёл ожидания!"</blockquote>
         <div class="author">
           <div class="avatar">К</div>
           <div class="info"><strong>Кристина</strong><span>Капитальный ремонт, 55 м²</span></div>
@@ -543,7 +552,7 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
-<section class="calculator" id="calculator">
+<section class="calc-section" id="calculator">
   <div class="cbg">
     <div class="orb"></div>
     <div class="orb"></div>
@@ -555,7 +564,7 @@ a{text-decoration:none;color:inherit}
       <p>Укажите параметры и получите предварительную смету за 30 секунд. Точную цену согласуем после замера.</p>
     </div>
     <div class="calc-wrap fade-in">
-      <div class="calc-card" id="calcCard">
+      <div class="calc-card">
         <div class="calc-row">
           <label>Тип помещения</label>
           <select id="roomType" onchange="calc()">
@@ -569,10 +578,10 @@ a{text-decoration:none;color:inherit}
         </div>
         <div class="calc-row">
           <div class="calc-range-header">
-            <label>Площадь помещения, м²</label>
-            <span class="val" id="areaVal">40</span>
+            <label>Площадь помещения</label>
+            <span class="val" id="areaVal">40 м²</span>
           </div>
-          <input type="range" id="area" min="8" max="200" value="40" oninput="document.getElementById('areaVal').textContent=this.value;calc()">
+          <input type="range" id="area" min="8" max="200" value="40" oninput="document.getElementById('areaVal').textContent=this.value+' м²';calc()">
         </div>
         <div class="calc-row">
           <label>Вид ремонта</label>
@@ -592,7 +601,7 @@ a{text-decoration:none;color:inherit}
             <label class="calc-option"><input type="checkbox" value="6000" onchange="calc()"> Установка кондиционера</label>
             <label class="calc-option"><input type="checkbox" value="18000" onchange="calc()"> Тёплый пол (монтаж)</label>
             <label class="calc-option"><input type="checkbox" value="20000" onchange="calc()"> Натяжные потолки</label>
-            <label class="calc-option"><input type="checkbox" value="5000" onchange="calc()"> Поклейка фотообоев / фреска</label>
+            <label class="calc-option"><input type="checkbox" value="5000" onchange="calc()"> Поклейка фотообоев</label>
           </div>
         </div>
         <div class="calc-row">
@@ -606,7 +615,7 @@ a{text-decoration:none;color:inherit}
         <div class="calc-row calc-result" id="calcResult">
           <div class="row">
             <div>
-              <div style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.5">
+              <div style="font-size:14px;color:rgba(20,40,120,.5);line-height:1.5">
                 Примерная стоимость
                 <div style="font-size:12px">Уточняется после замера</div>
               </div>
@@ -622,29 +631,29 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
-<section class="section reviews" style="background:#111627" id="why">
+<section class="section benefits" id="benefits">
   <div class="container">
     <div class="section-header fade-in">
       <div class="label">почему мы</div>
       <h2>Почему 150+ клиентов выбрали <span class="highlight">РемПрофи</span></h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px" class="services-grid-4">
-      <div class="service-card fade-in">
+    <div class="benefits-grid">
+      <div class="benefit-card fade-in">
         <span class="icon">📋</span>
         <h4>Прозрачная смета</h4>
         <p>Никаких скрытых платежей. Цена фиксируется в договоре и не меняется в процессе.</p>
       </div>
-      <div class="service-card fade-in">
+      <div class="benefit-card fade-in">
         <span class="icon">📅</span>
         <h4>Соблюдение сроков</h4>
         <p>Каждый этап имеет чёткий дедлайн. За нарушение — неустойка по договору.</p>
       </div>
-      <div class="service-card fade-in">
+      <div class="benefit-card fade-in">
         <span class="icon">🛡️</span>
         <h4>Гарантия 3 года</h4>
         <p>На все выполненные работы. Если что-то пошло не так — исправим бесплатно.</p>
       </div>
-      <div class="service-card fade-in">
+      <div class="benefit-card fade-in">
         <span class="icon">🧹</span>
         <h4>Чистота и порядок</h4>
         <p>Каждый день убираем за собой. Ремонт без пыли и грязи — это реально.</p>
@@ -661,10 +670,10 @@ a{text-decoration:none;color:inherit}
   <div class="container">
     <div class="fade-in">
       <div class="section-header">
-        <div class="label">начните сегодня</div>
+        <div class="label" style="color:rgba(200,168,124,.8)">начните сегодня</div>
       </div>
       <h2>Готовы начать ремонт?<br><span class="highlight">Рассчитайте стоимость прямо сейчас</span></h2>
-      <p>Оставьте заявку и получите предварительную смету за 30 секунд. Никаких обязательств — просто прикиньте бюджет.</p>
+      <p>Оставьте заявку и получите предварительную смету за 30 секунд. Никаких обязательств.</p>
       <div class="cta-buttons">
         <a href="#calculator" class="btn-primary">Рассчитать стоимость</a>
         <a href="#calculator" class="btn-secondary">Оставить заявку</a>
@@ -723,12 +732,11 @@ function calc(){
   
   const rNames={1:'Косметический',2:'Капитальный',3.5:'Дизайнерский'};
   const cNames={'1.0':'Новостройка','1.15':'Обновление','1.3':'Старый фонд'};
-  const addText=extras>0?' + доп. работы за '+(extras).toLocaleString('ru')+' ₽':'';
+  const addText=extras>0?' + доп. работы '+extras.toLocaleString('ru')+' ₽':'';
   document.getElementById('priceDetail').textContent=rNames[repair]+' ремонт, '+document.getElementById('area').value+' м², '+cNames[document.getElementById('condition').value]+addText;
 }
 
-const modalFormBtn=document.getElementById('calcCta');
-modalFormBtn.addEventListener('click',function(e){
+document.getElementById('calcCta').addEventListener('click',function(e){
   e.preventDefault();
   document.getElementById('modal').classList.add('active');
 });
