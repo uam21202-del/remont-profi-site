@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>РемПрофи — ремонт квартир под ключ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#0b0e1a;color:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.section{padding:100px 0}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;background:rgba(11,14,26,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06);transition:.3s}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:24px;letter-spacing:-.5px}
+.logo span{color:#f5a623}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#f5a623,#e8831a);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px}
+.nav{display:flex;gap:8px;align-items:center}
+.nav a{padding:8px 16px;font-size:14px;font-weight:500;color:rgba(255,255,255,.7);border-radius:8px;transition:.3s}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.nav .cta-btn{background:linear-gradient(135deg,#f5a623,#e8831a);color:#0b0e1a;font-weight:700;padding:10px 24px;border-radius:10px}
+.nav .cta-btn:hover{background:linear-gradient(135deg,#ffb840,#f09020);color:#0b0e1a}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.burger span{width:28px;height:3px;background:#fff;border-radius:2px;transition:.3s}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15}
+.hero-bg .orb:nth-child(1){width:500px;height:500px;background:#f5a623;top:-100px;right:-100px}
+.hero-bg .orb:nth-child(2){width:400px;height:400px;background:#6c63ff;bottom:-80px;left:-120px}
+.hero-bg .orb:nth-child(3){width:300px;height:300px;background:#f5a623;bottom:30%;left:40%;opacity:.08}
+.hero .container{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,.12);border:1px solid rgba(245,166,35,.25);border-radius:50px;padding:6px 16px 6px 6px;font-size:13px;font-weight:500;color:#f5a623;margin-bottom:24px}
+.hero-badge .dot{width:26px;height:26px;border-radius:50%;background:#f5a623;display:flex;align-items:center;justify-content:center;color:#0b0e1a;font-weight:800;font-size:14px}
+.hero h1{font-size:48px;font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px}
+.hero h1 .highlight{background:linear-gradient(135deg,#f5a623,#ffb840);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;line-height:1.6;color:rgba(255,255,255,.6);margin-bottom:32px;max-width:520px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#f5a623,#e8831a);color:#0b0e1a;font-weight:700;font-size:16px;padding:16px 36px;border-radius:12px;border:none;cursor:pointer;transition:.3s;font-family:'Inter',sans-serif}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(245,166,35,.3)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-weight:600;font-size:16px;padding:16px 36px;border-radius:12px;cursor:pointer;transition:.3s;text-decoration:none}
+.btn-secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
+.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06)}
+.hero-stats .stat h3{font-size:32px;font-weight:800;color:#f5a623}
+.hero-stats .stat p{font-size:13px;color:rgba(255,255,255,.5);margin:0}
+.hero-right{position:relative;display:flex;justify-content:center}
+.hero-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:40px;backdrop-filter:blur(20px);width:100%;max-width:440px}
+.hero-card h3{font-size:20px;font-weight:700;margin-bottom:20px;text-align:center}
+.hero-strip{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(245,166,35,.08);border-radius:10px;padding:14px 20px;margin-bottom:20px;font-size:14px;color:rgba(255,255,255,.7)}
+.hero-strip strong{color:#f5a623}
+.hero-card .btn-primary{width:100%;justify-content:center;font-size:15px;padding:16px}
+
+.section-header{text-align:center;margin-bottom:60px}
+.section-header .label{display:inline-block;font-size:13px;font-weight:600;color:#f5a623;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-header h2{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1.2}
+.section-header h2 .highlight{background:linear-gradient(135deg,#f5a623,#ffb840);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.section-header p{font-size:17px;color:rgba(255,255,255,.5);margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto}
+
+.services{background:linear-gradient(180deg,#0b0e1a,#111627)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:32px 24px;text-align:center;transition:.3s;cursor:default}
+.service-card:hover{background:rgba(245,166,35,.06);border-color:rgba(245,166,35,.2);transform:translateY(-4px)}
+.service-card .icon{font-size:44px;margin-bottom:16px;display:block}
+.service-card h4{font-size:20px;font-weight:700;margin-bottom:8px}
+.service-card p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.55);margin-bottom:16px}
+.service-card .tag{display:inline-block;font-size:11px;font-weight:600;color:#f5a623;background:rgba(245,166,35,.1);padding:4px 12px;border-radius:50px}
+
+.portfolio{background:#0b0e1a}
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.portfolio-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;overflow:hidden;transition:.3s}
+.portfolio-card:hover{border-color:rgba(245,166,35,.2);transform:translateY(-4px)}
+.portfolio-card .img-wrap{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden}
+.portfolio-card .img-wrap .row{display:flex;height:100%}
+.portfolio-card .img-wrap .row .col{flex:1;position:relative;overflow:hidden}
+.portfolio-card .img-wrap .row .col img{width:100%;height:100%;object-fit:cover;display:block}
+.portfolio-card .img-wrap .label{position:absolute;top:12px;border-radius:6px;font-size:11px;font-weight:700;padding:4px 12px;text-transform:uppercase;letter-spacing:.5px}
+.portfolio-card .img-wrap .label.before{left:12px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
+.portfolio-card .img-wrap .label.after{right:12px;background:#f5a623;color:#0b0e1a}
+.portfolio-card .img-wrap .divider{position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(245,166,35,.6);transform:translateX(-50%);z-index:2}
+.portfolio-card .img-wrap .divider::before{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#f5a623;color:#0b0e1a;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700}
+.portfolio-card .info{padding:20px 24px 24px}
+.portfolio-card .info h4{font-size:17px;font-weight:700;margin-bottom:4px}
+.portfolio-card .info p{font-size:13px;color:rgba(255,255,255,.45)}
+.portfolio-card .info .meta{display:flex;gap:16px;margin-top:10px;font-size:12px;color:rgba(255,255,255,.4)}
+.portfolio-card .info .meta span{display:flex;align-items:center;gap:4px}
+.portfolio-card .info .meta .dot{color:#f5a623}
+
+.about{background:#111627;position:relative;overflow:hidden}
+.about .abg{position:absolute;inset:0;pointer-events:none}
+.about .abg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.06}
+.about .abg .orb:nth-child(1){width:400px;height:400px;background:#f5a623;top:-100px;left:-80px}
+.about .abg .orb:nth-child(2){width:350px;height:350px;background:#6c63ff;bottom:-100px;right:-80px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.about-content .label{font-size:13px;font-weight:600;color:#f5a623;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.about-content h2{font-size:36px;font-weight:800;letter-spacing:-1px;line-height:1.2;margin-bottom:20px}
+.about-content .highlight{background:linear-gradient(135deg,#f5a623,#ffb840);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.about-content p{font-size:16px;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:20px}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.about-features li{list-style:none;display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.7)}
+.about-features li .check{width:20px;height:20px;border-radius:6px;background:rgba(245,166,35,.15);display:flex;align-items:center;justify-content:center;color:#f5a623;font-size:12px;flex-shrink:0}
+.about-numbers{display:flex;gap:40px;padding:24px 0;border-top:1px solid rgba(255,255,255,.06)}
+.about-numbers .num h4{font-size:32px;font-weight:800;color:#f5a623}
+.about-numbers .num p{font-size:13px;margin:0;color:rgba(255,255,255,.5)}
+.about-image{position:relative}
+.about-image .img-placeholder{width:100%;aspect-ratio:4/3;border-radius:20px;background:linear-gradient(135deg,rgba(245,166,35,.1),rgba(108,99,255,.08));border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-image .img-placeholder .emoji{font-size:90px}
+.about-image .badge{position:absolute;bottom:-16px;left:-16px;background:linear-gradient(135deg,#f5a623,#e8831a);color:#0b0e1a;padding:16px 24px;border-radius:16px;font-weight:800;text-align:center}
+.about-image .badge .n{font-size:28px;display:block;line-height:1}
+.about-image .badge .t{font-size:12px;font-weight:600;opacity:.8}
+
+.reviews{background:#0b0e1a}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:28px;transition:.3s}
+.review-card:hover{border-color:rgba(245,166,35,.15)}
+.review-card .stars{color:#f5a623;font-size:16px;margin-bottom:12px;letter-spacing:2px}
+.review-card blockquote{font-size:14px;line-height:1.7;color:rgba(255,255,255,.65);margin-bottom:16px;font-style:italic}
+.review-card .author{display:flex;align-items:center;gap:12px}
+.review-card .author .avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,rgba(245,166,35,.2),rgba(108,99,255,.15));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#f5a623}
+.review-card .author .info strong{display:block;font-size:14px;font-weight:600}
+.review-card .author .info span{font-size:12px;color:rgba(255,255,255,.4)}
+
+.calculator{padding:100px 0;background:#111627;position:relative;overflow:hidden}
+.calculator .cbg{position:absolute;inset:0;pointer-events:none}
+.calculator .cbg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.07}
+.calculator .cbg .orb:nth-child(1){width:500px;height:500px;background:#f5a623;top:-120px;right:-100px}
+.calculator .cbg .orb:nth-child(2){width:350px;height:350px;background:#6c63ff;bottom:-100px;left:-80px}
+.calc-wrap{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.calc-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:24px;padding:48px}
+.calc-row{margin-bottom:24px}
+.calc-row label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:rgba(255,255,255,.8)}
+.calc-row label .hint{font-weight:400;font-size:12px;color:rgba(255,255,255,.35)}
+.calc-row select,.calc-row input[type="number"]{width:100%;padding:14px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#fff;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:.3s}
+.calc-row select option{background:#1a1d2e;color:#fff}
+.calc-row select:focus,.calc-row input:focus{border-color:#f5a623;background:rgba(245,166,35,.05)}
+.calc-row input[type="range"]{-webkit-appearance:none;width:100%;height:6px;border-radius:3px;background:rgba(255,255,255,.1);outline:none;transition:.3s;margin-top:8px}
+.calc-row input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#f5a623,#e8831a);cursor:pointer;border:none}
+.calc-row input[type="range"]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#f5a623,#e8831a);cursor:pointer;border:none}
+.calc-range-header{display:flex;justify-content:space-between;align-items:center}
+.calc-range-header .val{font-size:20px;font-weight:700;color:#f5a623}
+.calc-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.calc-option{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:10px;cursor:pointer;transition:.3s;font-size:14px;color:rgba(255,255,255,.7)}
+.calc-option:hover{border-color:rgba(245,166,35,.2)}
+.calc-option input[type="checkbox"]{-webkit-appearance:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.2);border-radius:4px;cursor:pointer;transition:.3s;flex-shrink:0;position:relative}
+.calc-option input[type="checkbox"]:checked{background:#f5a623;border-color:#f5a623}
+.calc-option input[type="checkbox"]:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#0b0e1a;font-size:12px;font-weight:700}
+.calc-option.selected{border-color:rgba(245,166,35,.3);background:rgba(245,166,35,.06)}
+.calc-result{padding:28px;border-radius:16px;background:rgba(245,166,35,.05);border:1px solid rgba(245,166,35,.15);margin-top:8px}
+.calc-result .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.calc-result .row .price-large{font-size:42px;font-weight:900;color:#f5a623;letter-spacing:-1px}
+.calc-result .row .price-large span{font-size:18px;font-weight:500;color:rgba(255,255,255,.4)}
+.calc-result .detail{font-size:13px;color:rgba(255,255,255,.4);margin-top:4px}
+.calc-result .detail span{margin:0 12px;color:rgba(255,255,255,.15)}
+.calc-result .btn-primary{margin-top:16px;width:100%;justify-content:center}
+.calc-result .note{font-size:12px;color:rgba(255,255,255,.3);margin-top:12px;text-align:center}
+.calc-hint{font-size:12px;color:rgba(255,255,255,.3);margin-top:6px}
+
+.final-cta{padding:100px 0;background:#0b0e1a;position:relative;overflow:hidden}
+.final-cta .fbg{position:absolute;inset:0;pointer-events:none}
+.final-cta .fbg .orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.08}
+.final-cta .fbg .orb:nth-child(1){width:500px;height:500px;background:#f5a623;top:-150px;right:-100px}
+.final-cta .fbg .orb:nth-child(2){width:400px;height:400px;background:#6c63ff;bottom:-120px;left:-100px}
+.final-cta .container{position:relative;z-index:1;text-align:center}
+.final-cta h2{font-size:42px;font-weight:900;letter-spacing:-1.5px;line-height:1.15;margin-bottom:16px}
+.final-cta h2 .highlight{background:linear-gradient(135deg,#f5a623,#ffb840);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.final-cta p{font-size:18px;color:rgba(255,255,255,.55);max-width:600px;margin:0 auto 36px}
+.final-cta .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.final-cta .guarantee{display:flex;justify-content:center;gap:32px;margin-top:40px;flex-wrap:wrap}
+.final-cta .guarantee span{font-size:14px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:8px}
+
+.footer{background:#080b15;padding:40px 0;border-top:1px solid rgba(255,255,255,.04)}
+.footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer p{font-size:13px;color:rgba(255,255,255,.3)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.35);transition:.3s}
+.footer-links a:hover{color:#f5a623}
+
+.modal-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:#1a1d2e;border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:48px;max-width:440px;width:90%;text-align:center}
+.modal .icon{font-size:56px;margin-bottom:16px}
+.modal h3{font-size:24px;font-weight:700;margin-bottom:8px}
+.modal p{font-size:15px;color:rgba(255,255,255,.55);margin-bottom:24px}
+.modal .mo{display:flex;gap:12px;justify-content:center}
+
+.fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.fade-in-left{opacity:0;transform:translateX(-40px);transition:all .6s ease}
+.fade-in-left.visible{opacity:1;transform:translateX(0)}
+.fade-in-right{opacity:0;transform:translateX(40px);transition:all .6s ease}
+.fade-in-right.visible{opacity:1;transform:translateX(0)}
+
+@media(max-width:1024px){
+  .hero .container{grid-template-columns:1fr;gap:40px}
+  .hero h1{font-size:38px}
+  .hero-right .hero-card{max-width:100%}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .portfolio-grid{grid-template-columns:1fr;max-width:600px;margin:0 auto}
+  .review-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .about-image{max-width:500px;margin:0 auto}
+}
+@media(max-width:768px){
+  .nav{display:none;position:fixed;top:72px;left:0;right:0;background:#0b0e1a;border-bottom:1px solid rgba(255,255,255,.06);padding:16px 20px;flex-direction:column;gap:4px}
+  .nav.open{display:flex}
+  .nav a{padding:12px 16px;width:100%}
+  .burger{display:flex}
+  .hero h1{font-size:30px}
+  .hero-stats{flex-wrap:wrap;gap:24px}
+  .hero-stats .stat h3{font-size:26px}
+  .services-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+  .section-header h2{font-size:28px}
+  .review-grid{grid-template-columns:1fr}
+  .about-features{grid-template-columns:1fr}
+  .about-numbers{flex-wrap:wrap;gap:20px}
+  .calc-card{padding:28px 20px}
+  .calc-options{grid-template-columns:1fr}
+  .calc-result .row{flex-direction:column;text-align:center}
+  .final-cta h2{font-size:28px}
+  .portfolio-card .img-wrap{aspect-ratio:4/3}
+  .footer .container{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .hero h1{font-size:26px}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn-primary,.hero-btns .btn-secondary{width:100%;justify-content:center}
+  .section{padding:60px 0}
+  .calculator{padding:60px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container">
+    <a href="#hero" class="logo">
+      <div class="logo-icon">РП</div>
+      Рем<span>Профи</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#services">Услуги</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#about">О нас</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#calculator">Калькулятор</a>
+      <a href="#calculator" class="cta-btn">Рассчитать стоимость</a>
+    </nav>
+    <div class="burger" id="burger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+  <div class="container">
+    <div class="hero-left fade-in-left">
+      <div class="hero-badge">
+        <span class="dot">150+</span>
+        квартир сдано в срок
+      </div>
+      <h1>Ремонт квартир <span class="highlight">под ключ</span> с гарантией 3 года</h1>
+      <p>Превратим вашу квартиру в пространство мечты. Без пыли, без шума, без срывов сроков. Работаем строго по договору с фиксированной сметой.</p>
+      <div class="hero-btns">
+        <a href="#calculator" class="btn-primary">Рассчитать стоимость</a>
+        <a href="#portfolio" class="btn-secondary">Смотреть работы</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><h3>150+</h3><p>готовых объектов</p></div>
+        <div class="stat"><h3>3 года</h3><p>гарантии на работу</p></div>
+        <div class="stat"><h3>12 лет</h3><p>на рынке ремонта</p></div>
+      </div>
+    </div>
+    <div class="hero-right fade-in-right">
+      <div class="hero-card">
+        <h3>📐 Узнайте точную стоимость ремонта</h3>
+        <div class="hero-strip">⏱ Расчёт займёт <strong>30 секунд</strong></div>
+        <a href="#calculator" class="btn-primary">Открыть калькулятор →</a>
+        <p style="text-align:center;font-size:12px;color:rgba(255,255,255,.3);margin-top:14px">Цена не изменится после подписания договора</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="label">что мы делаем</div>
+      <h2>Виды <span class="highlight">ремонта</span></h2>
+      <p>Работаем с квартирами любой площади и сложности. Подберём оптимальное решение под ваш бюджет.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <span class="icon">🪞</span>
+        <h4>Косметический ремонт</h4>
+        <p>Освежить интерьер перед продажей или после аренды. Покраска стен, замена напольного покрытия, обновление сантехники.</p>
+        <span class="tag">от 3 500 ₽/м²</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="icon">🏗️</span>
+        <h4>Капитальный ремонт</h4>
+        <p>Полное обновление квартиры: стяжка пола, штукатурка стен, замена проводки, сантехники, перепланировка помещений.</p>
+        <span class="tag">от 8 000 ₽/м²</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="icon">✨</span>
+        <h4>Дизайнерский ремонт</h4>
+        <p>Индивидуальный дизайн-проект, авторский надзор, премиальные материалы, сложные архитектурные решения и освещение.</p>
+        <span class="tag">от 14 000 ₽/м²</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="icon">🛁</span>
+        <h4>Ремонт ванной и туалета</h4>
+        <p>Гидроизоляция, плитка «под ключ», установка ванны, душевой кабины, унитаза, полотенцесушителя и всей сантехники.</p>
+        <span class="tag">от 120 000 ₽</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="icon">🍳</span>
+        <h4>Ремонт кухни</h4>
+        <p>Разводка воды и электричества, установка кухонного гарнитура, вытяжка, фартук, фурнитура — всё под ключ.</p>
+        <span class="tag">от 90 000 ₽</span>
+      </div>
+      <div class="service-card fade-in">
+        <span class="icon">📐</span>
+        <h4>Отделка новостройки</h4>
+        <p>Черновая и чистовая отделка квартиры с нуля. Выравнивание стен, потолка, пола — полная готовность к заселению.</p>
+        <span class="tag">от 6 500 ₽/м²</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="label">портфолио</div>
+      <h2>Примеры работ <span class="highlight">ДО и ПОСЛЕ</span></h2>
+      <p>Каждый объект — это история преображения. Смотрите сами, как мы меняем пространство.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card fade-in">
+        <div class="img-wrap">
+          <div class="row">
+            <div class="col" style="background:#1e2340;display:flex;align-items:center;justify-content:center;flex-direction:column">
+              <span style="font-size:48px;opacity:.3">🏚️</span>
+              <span style="font-size:12px;color:rgba(255,255,255,.2);margin-top:8px">ДО</span>
+            </div>
+            <div class="col" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(108,99,255,.05));display:flex;align-items:center;justify-content:center;flex-direction:column">
+              <span style="font-size:48px;opacity:.3">🏡</span>
+              <span style="font-size:12px;color:#f5a623;margin-top:8px">ПОСЛЕ</span>
+            </div>
+          </div>
+          <span class="label before">до</span>
+          <span class="label after">после</span>
+          <div class="divider"></div>
+        </div>
+        <div class="info">
+          <h4>Двушка 58 м² в панельном доме</h4>
+          <p>Капитальный ремонт со сменой планировки</p>
+          <div class="meta">
+            <span>📍 ЖК «Новый город»</span>
+            <span><span class="dot">●</span> 2,5 месяца</span>
+            <span><span class="dot">●</span> 520 000 ₽</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in">
+        <div class="img-wrap">
+          <div class="row">
+            <div class="col" style="background:#1e2340;display:flex;align-items:center;justify-content:center;flex-direction:column">
+              <span style="font-size:48px;opacity:.3">🏚️</span>
+              <span style="font-size:12px;color:rgba(255,255,255,.2);margin-top:8px">ДО</span>
+            </div>
+            <div class="col" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(108,99,255,.05));display:flex;align-items:center;justify-content:center;flex-direction:column">
+              <span style="font-size:48px;opacity:.3">🏡</span>
+              <span style="font-size:12px;color:#f5a623;margin-top:8px">ПОСЛЕ</span>
+            </div>
+          </div>
+          <span class="label before">до</span>
+          <span class="label after">после</span>
+          <div class="divider"></div>
+        </div>
+        <div class="info">
+          <h4>Студия 32 м² — дизайнерский ремонт</h4>
+          <p>Сложное освещение, паркетная ёлка, скрытые двери</p>
+          <div class="meta">
+            <span>📍 ЖК «Петровский»</span>
+            <span><span class="dot">●</span> 3 месяца</span>
+            <span><span class="dot">●</span> 580 000 ₽</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in">
+        <div class="img-wrap">
+          <div class="row">
+            <div class="col" style="background:#1e2340;display:flex;align-items:center;justify-content:center;flex-direction:column">
+              <span style="font-size:48px;opacity:.3">🏚️</span>
+              <span style="font-size:12px;color:rgba(255,255,255,.2);margin-top:8px">ДО</span>
+            </div>
+            <div class="col" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(108,99,255,.05));display:flex;align-items:center;justify-content:center;flex-direction:column">
+              <span style="font-size:48px;opacity:.3">🏡</span>
+              <span style="font-size:12px;color:#f5a623;margin-top:8px">ПОСЛЕ</span>
+            </div>
+          </div>
+          <span class="label before">до</span>
+          <span class="label after">после</span>
+          <div class="divider"></div>
+        </div>
+        <div class="info">
+          <h4>Ванная 5 м² — с нуля под ключ</h4>
+          <p>Полная гидроизоляция, плитка ручной работы, инсталляция</p>
+          <div class="meta">
+            <span>📍 ЖК «Московский»</span>
+            <span><span class="dot">●</span> 3 недели</span>
+            <span><span class="dot">●</span> 185 000 ₽</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card fade-in">
+        <div class="img-wrap">
+          <div class="row">
+            <div class="col" style="background:#1e2340;display:flex;align-items:center;justify-content:center;flex-direction:column">
+              <span style="font-size:48px;opacity:.3">🏚️</span>
+              <span style="font-size:12px;color:rgba(255,255,255,.2);margin-top:8px">ДО</span>
+            </div>
+            <div class="col" style="background:linear-gradient(135deg,rgba(245,166,35,.08),rgba(108,99,255,.05));display:flex;align-items:center;justify-content:center;flex-direction:column">
+              <span style="font-size:48px;opacity:.3">🏡</span>
+              <span style="font-size:12px;color:#f5a623;margin-top:8px">ПОСЛЕ</span>
+            </div>
+          </div>
+          <span class="label before">до</span>
+          <span class="label after">после</span>
+          <div class="divider"></div>
+        </div>
+        <div class="info">
+          <h4>Кухня-гостиная 28 м²</h4>
+          <p>Снос стены, объединение, остров, дизайнерский свет</p>
+          <div class="meta">
+            <span>📍 ЖК «Приморский»</span>
+            <span><span class="dot">●</span> 2 месяца</span>
+            <span><span class="dot">●</span> 420 000 ₽</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="abg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content fade-in-left">
+        <div class="label">о компании</div>
+        <h2>Ремонт без головной боли — это <span class="highlight">РемПрофи</span></h2>
+        <p>Мы работаем на рынке отделочных работ больше 12 лет. За это время сдали более 150 объектов — от малогабаритных студий до квартир премиум-класса.</p>
+        <p>Наша главная ценность — предсказуемый результат. Вы заранее знаете точную стоимость, сроки и что получите в итоге. Никаких скрытых доплат, никаких «ой, это не входило в смету».</p>
+        <ul class="about-features">
+          <li><span class="check">✓</span>12 лет опыта на рынке ремонта</li>
+          <li><span class="check">✓</span>Только штатные сотрудники</li>
+          <li><span class="check">✓</span>Фиксированная смета без доплат</li>
+          <li><span class="check">✓</span>Гарантия 3 года на все работы</li>
+          <li><span class="check">✓</span>Соблюдение сроков (договор)</li>
+          <li><span class="check">✓</span>Поэтапная оплата</li>
+        </ul>
+        <a href="#calculator" class="btn-primary">Рассчитать стоимость</a>
+      </div>
+      <div class="about-image fade-in-right">
+        <div class="img-placeholder"><span class="emoji">👷</span></div>
+        <div class="badge"><span class="n">12 лет</span><span class="t">безупречной работы</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="label">отзывы</div>
+      <h2>Что говорят <span class="highlight">клиенты</span></h2>
+      <p>Более 150 семей уже живут в квартирах после нашего ремонта.</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card fade-in">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Сделали капитальный ремонт в двушке. Очень переживали за сроки, но ребята закончили даже на неделю раньше! Качество на высоте. Отдельное спасибо дизайнеру — продумали каждую мелочь."</blockquote>
+        <div class="author">
+          <div class="avatar">Е</div>
+          <div class="info"><strong>Елена</strong><span>Капитальный ремонт, 62 м²</span></div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Заказывали ремонт в новостройке. Черновую отделку сделали идеально ровно, все углы 90°, проводка по проекту. Сдали квартиру точно в срок. Буду советовать знакомым!"</blockquote>
+        <div class="author">
+          <div class="avatar">А</div>
+          <div class="info"><strong>Алексей</strong><span>Отделка новостройки, 45 м²</span></div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Очень боялся нарваться на недобросовестных мастеров. Но здесь всё честно: договор, смета, поэтапная оплата. Итоговая цена совпала с изначальной на 100%."</blockquote>
+        <div class="author">
+          <div class="avatar">С</div>
+          <div class="info"><strong>Сергей</strong><span>Косметический ремонт, 38 м²</span></div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Делали дизайнерский ремонт в студии. Получилось просто вау! Соседи приходят и не верят, что это та же квартира. Материалы помогли выбрать с оптимальным соотношением цена-качество."</blockquote>
+        <div class="author">
+          <div class="avatar">М</div>
+          <div class="info"><strong>Марина</strong><span>Дизайнерский ремонт, 34 м²</span></div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Ремонт в ванной делали — полностью поменяли сантехнику, плитку, установили душевую. Мастера аккуратные, всё убирали за собой. Очень довольны результатом!"</blockquote>
+        <div class="author">
+          <div class="avatar">Т</div>
+          <div class="info"><strong>Татьяна</strong><span>Ремонт ванной, 6 м²</span></div>
+        </div>
+      </div>
+      <div class="review-card fade-in">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Первый раз делали ремонт и очень переживали. Но команда РемПрофи всё объяснила, показала материалы, согласовала каждый этап. Результат превзошёл ожидания. Спасибо!"</blockquote>
+        <div class="author">
+          <div class="avatar">К</div>
+          <div class="info"><strong>Кристина</strong><span>Капитальный ремонт, 55 м²</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="calculator" id="calculator">
+  <div class="cbg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="label">калькулятор</div>
+      <h2>Рассчитайте стоимость <span class="highlight">ремонта</span></h2>
+      <p>Укажите параметры и получите предварительную смету за 30 секунд. Точную цену согласуем после замера.</p>
+    </div>
+    <div class="calc-wrap fade-in">
+      <div class="calc-card" id="calcCard">
+        <div class="calc-row">
+          <label>Тип помещения</label>
+          <select id="roomType" onchange="calc()">
+            <option value="1.0">Квартира-студия</option>
+            <option value="1.1">Однокомнатная</option>
+            <option value="1.15">Двухкомнатная</option>
+            <option value="1.2">Трёхкомнатная и более</option>
+            <option value="0.7">Ванная / туалет (отдельно)</option>
+            <option value="0.8">Кухня (отдельно)</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <div class="calc-range-header">
+            <label>Площадь помещения, м²</label>
+            <span class="val" id="areaVal">40</span>
+          </div>
+          <input type="range" id="area" min="8" max="200" value="40" oninput="document.getElementById('areaVal').textContent=this.value;calc()">
+        </div>
+        <div class="calc-row">
+          <label>Вид ремонта</label>
+          <select id="repairType" onchange="calc()">
+            <option value="1.0">Косметический</option>
+            <option value="2.0" selected>Капитальный</option>
+            <option value="3.5">Дизайнерский / Премиум</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <label>Дополнительные работы <span class="hint">(отметьте нужное)</span></label>
+          <div class="calc-options">
+            <label class="calc-option"><input type="checkbox" value="15000" onchange="calc()"> Демонтаж стен</label>
+            <label class="calc-option"><input type="checkbox" value="12000" onchange="calc()"> Возведение перегородок</label>
+            <label class="calc-option"><input type="checkbox" value="8000" onchange="calc()"> Замена электропроводки</label>
+            <label class="calc-option"><input type="checkbox" value="10000" onchange="calc()"> Замена труб водоснабжения</label>
+            <label class="calc-option"><input type="checkbox" value="6000" onchange="calc()"> Установка кондиционера</label>
+            <label class="calc-option"><input type="checkbox" value="18000" onchange="calc()"> Тёплый пол (монтаж)</label>
+            <label class="calc-option"><input type="checkbox" value="20000" onchange="calc()"> Натяжные потолки</label>
+            <label class="calc-option"><input type="checkbox" value="5000" onchange="calc()"> Поклейка фотообоев / фреска</label>
+          </div>
+        </div>
+        <div class="calc-row">
+          <label>Состояние помещения</label>
+          <select id="condition" onchange="calc()">
+            <option value="1.0">Новостройка (черновая)</option>
+            <option value="1.15" selected>Требует капитального обновления</option>
+            <option value="1.3">Старый фонд / косметика не спасает</option>
+          </select>
+        </div>
+        <div class="calc-row calc-result" id="calcResult">
+          <div class="row">
+            <div>
+              <div style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.5">
+                Примерная стоимость
+                <div style="font-size:12px">Уточняется после замера</div>
+              </div>
+            </div>
+            <div class="price-large" id="totalPrice">0 ₽</div>
+          </div>
+          <div class="detail" id="priceDetail"></div>
+          <a href="#" class="btn-primary" id="calcCta">Оставить заявку на замер</a>
+          <div class="note">* Цена фиксируется в договоре и не меняется</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section reviews" style="background:#111627" id="why">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="label">почему мы</div>
+      <h2>Почему 150+ клиентов выбрали <span class="highlight">РемПрофи</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px" class="services-grid-4">
+      <div class="service-card fade-in">
+        <span class="icon">📋</span>
+        <h4>Прозрачная смета</h4>
+        <p>Никаких скрытых платежей. Цена фиксируется в договоре и не меняется в процессе.</p>
+      </div>
+      <div class="service-card fade-in">
+        <span class="icon">📅</span>
+        <h4>Соблюдение сроков</h4>
+        <p>Каждый этап имеет чёткий дедлайн. За нарушение — неустойка по договору.</p>
+      </div>
+      <div class="service-card fade-in">
+        <span class="icon">🛡️</span>
+        <h4>Гарантия 3 года</h4>
+        <p>На все выполненные работы. Если что-то пошло не так — исправим бесплатно.</p>
+      </div>
+      <div class="service-card fade-in">
+        <span class="icon">🧹</span>
+        <h4>Чистота и порядок</h4>
+        <p>Каждый день убираем за собой. Ремонт без пыли и грязи — это реально.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="fbg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-header">
+        <div class="label">начните сегодня</div>
+      </div>
+      <h2>Готовы начать ремонт?<br><span class="highlight">Рассчитайте стоимость прямо сейчас</span></h2>
+      <p>Оставьте заявку и получите предварительную смету за 30 секунд. Никаких обязательств — просто прикиньте бюджет.</p>
+      <div class="cta-buttons">
+        <a href="#calculator" class="btn-primary">Рассчитать стоимость</a>
+        <a href="#calculator" class="btn-secondary">Оставить заявку</a>
+      </div>
+      <div class="guarantee">
+        <span>✔️ Бесплатный замер</span>
+        <span>✔️ Фиксированная смета</span>
+        <span>✔️ Подарок при заказе</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 РемПрофи. Все права защищены.</p>
+    <div class="footer-links">
+      <a href="#">Политика конфиденциальности</a>
+      <a href="#">Договор оферты</a>
+      <a href="#">+7 (999) 123-45-67</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="icon">✅</div>
+    <h3>Заявка принята!</h3>
+    <p>Мы свяжемся с вами в ближайшее время, согласуем удобное время для замера и подготовим точную смету.</p>
+    <div class="mo">
+      <button class="btn-primary" onclick="closeModal()">Отлично, жду</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+
+document.querySelectorAll('.calc-option input[type="checkbox"]').forEach(cb=>{
+  cb.addEventListener('change',function(){this.closest('.calc-option').classList.toggle('selected',this.checked)})
+});
+
+function calc(){
+  const room=parseFloat(document.getElementById('roomType').value);
+  const area=parseFloat(document.getElementById('area').value);
+  const repair=parseFloat(document.getElementById('repairType').value);
+  const condition=parseFloat(document.getElementById('condition').value);
+  let extras=0;
+  document.querySelectorAll('.calc-option input[type="checkbox"]:checked').forEach(cb=>{extras+=parseFloat(cb.value)});
+  
+  const base=area*3500*repair*room*condition;
+  const total=Math.round(base/1000)*1000+extras;
+  
+  document.getElementById('totalPrice').textContent=total.toLocaleString('ru')+' ₽';
+  
+  const rNames={1:'Косметический',2:'Капитальный',3.5:'Дизайнерский'};
+  const cNames={'1.0':'Новостройка','1.15':'Обновление','1.3':'Старый фонд'};
+  const addText=extras>0?' + доп. работы за '+(extras).toLocaleString('ru')+' ₽':'';
+  document.getElementById('priceDetail').textContent=rNames[repair]+' ремонт, '+document.getElementById('area').value+' м², '+cNames[document.getElementById('condition').value]+addText;
+}
+
+const modalFormBtn=document.getElementById('calcCta');
+modalFormBtn.addEventListener('click',function(e){
+  e.preventDefault();
+  document.getElementById('modal').classList.add('active');
+});
+
+function closeModal(){document.getElementById('modal').classList.remove('active')}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')})
+},{threshold:0.1});
+document.querySelectorAll('.fade-in,.fade-in-left,.fade-in-right').forEach(el=>observer.observe(el));
+setTimeout(()=>{
+  document.querySelectorAll('.fade-in,.fade-in-left,.fade-in-right').forEach(el=>{
+    const rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight)el.classList.add('visible')
+  })
+},100);
+
+calc();
+</script>
+</body>
+</html>
